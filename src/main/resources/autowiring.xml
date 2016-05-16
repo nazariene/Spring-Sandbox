@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	>
+
+	<bean id="stringBean" class="java.lang.String">
+		<constructor-arg value="String value"/>
+	</bean>
+	<bean id="autowireHelperBean" class="com.emc.spring.autowiring.AutowireHelperBean">
+		<property name="property" value="111"/>
+	</bean>
+	<bean id="autowireSubHelperBean" class="com.emc.spring.autowiring.AutowireSubHelperBean">
+		<property name="property" value="222"/>
+	</bean>
+
+
+
+	<bean id="autowireBeanByName" class="com.emc.spring.autowiring.AutowireBean" autowire="byName"/>
+
+
+	<!-- This will throw a NoUniqueBeanDefinitionException because 2 beans match - i.e. inheritance counts! -->
+	<!--<bean id="autowireBeanByType" class="com.emc.spring.autowiring.AutowireBean" autowire="byType"/>-->
+
+
+
+	<bean id="autowireBeanConstructor" class="com.emc.spring.autowiring.AutowireConstructorBean" autowire="constructor"/>
+</beans>

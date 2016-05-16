@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2002-2016 EMC Corporation All Rights Reserved
  */
-package com.emc.spring;
+package com.emc.spring.basic;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

@@ -7,14 +7,14 @@
 
 default-init-method="doStuffNo">
 
-	<bean id="singlePropertyBean" class="com.emc.spring.SinglePropertyBean" destroy-method="destroy" init-method="init">
+	<bean id="singlePropertyBean" class="com.emc.spring.basic.SinglePropertyBean" destroy-method="destroy" init-method="init">
 		<property name="property" value="Hello World!"/>
 	</bean>
 
-	<bean id="childPropertyBean" class="com.emc.spring.ChildPropertiesBean" parent="singlePropertyBean" destroy-method="nop" init-method="nop">
+	<bean id="childPropertyBean" class="com.emc.spring.basic.ChildPropertiesBean" parent="singlePropertyBean" destroy-method="nop" init-method="nop">
 		<property name="property2" value="Second Value"/>
 	</bean>
 
-	<bean class="com.emc.spring.PostProcessorExample"/>
+	<bean class="com.emc.spring.basic.PostProcessorExample"/>
 
 </beans>

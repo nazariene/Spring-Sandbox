@@ -11,10 +11,13 @@ public class AnnotationsMain {
     public static void main(String[] args) {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("annotations.xml");
         context.registerShutdownHook();
-        RequiredBean requiredBean = (RequiredBean) context.getBean("requiredBean");
 
+        RequiredBean requiredBean = (RequiredBean) context.getBean("requiredBean");
         System.out.println(requiredBean.getName());
 
+        AutowiredBean autowiredBean = (AutowiredBean) context.getBean("autowiredBean");
+        System.out.println(autowiredBean.getName());
+        System.out.println(autowiredBean.getAddress());
 
     }
 }

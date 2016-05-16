@@ -11,8 +11,14 @@
 
 	<context:annotation-config/>
 
-	<bean id="requiredBean" class="com.emc.spring.annotations.RequiredBean">
-		<property name="name" value="testName"/>
+	<bean id="requiredBean" class="com.emc.spring.annotations.RequiredBean"/>
+
+	<!-- Autowired works BY TYPE -->
+	<bean id="autowiredStringBean" class="java.lang.String">
+		<constructor-arg value="I'm an autowired string value"/>
 	</bean>
+
+	<bean id="autowiredTestBean" class="com.emc.spring.annotations.TestBean"/>
+	<bean id="autowiredBean" class="com.emc.spring.annotations.AutowiredBean"/>
 
 </beans>

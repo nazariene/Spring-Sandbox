@@ -5,6 +5,8 @@ package com.emc.spring.annotations;
 
 import org.springframework.beans.factory.annotation.Required;
 
+import javax.annotation.Resource;
+
 public class RequiredBean {
 
     private String name;
@@ -14,6 +16,7 @@ public class RequiredBean {
     }
 
     @Required
+    @Resource(name = "autowiredStringBean") //autowire byName
     public void setName(String name) {
         this.name = name;
     }

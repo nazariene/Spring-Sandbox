@@ -16,16 +16,18 @@ public class AutowireMain {
         System.out.println(obj.getAutowireHelperBean());
         System.out.println(obj.getAutowireHelperBean().getProperty());
 
-        /*AutowireBean obj1 = (AutowireBean) context.getBean("autowireBeanByType");
+        AutowireBean obj1 = (AutowireBean) context.getBean("autowireBeanByType");
         System.out.println(obj1.getAutowireHelperBean());
-        System.out.println(obj1.getAutowireHelperBean().getProperty());*/
+        System.out.println(obj1.getAutowireHelperBean().getProperty());
 
         AutowireConstructorBean obj2 = (AutowireConstructorBean) context.getBean("autowireBeanConstructor");
         System.out.println(obj2.getAutowireHelperBean());
         System.out.println(obj2.getAutowireHelperBean().getProperty());
-        System.out.println(obj2.getAutowireSubHelperBean());
-        System.out.println(obj2.getAutowireSubHelperBean().getProperty());
+        System.out.println(obj2.getAutowireAnotherHelperBean());
 
-
+        System.out.println("Getting AutowireBean2");
+        AutowireBean2 autowireBean2 = (AutowireBean2) context.getBean("autowireBeanByDefault");
+        System.out.println("Child: " + autowireBean2.getAutowireChildHelper().getProperty());
+        System.out.println("Parent: " + autowireBean2.getAutowireParentHelper().getProperty());
     }
 }

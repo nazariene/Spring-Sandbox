@@ -12,19 +12,32 @@
 	<bean id="autowireHelperBean" class="com.emc.spring.autowiring.AutowireHelperBean">
 		<property name="property" value="111"/>
 	</bean>
-	<bean id="autowireSubHelperBean" class="com.emc.spring.autowiring.AutowireSubHelperBean">
-		<property name="property" value="222"/>
-	</bean>
-
-
+	<bean id="autowireAnotherHelperBean" class="com.emc.spring.autowiring.AutowireAnotherHelperBean"/>
 
 	<bean id="autowireBeanByName" class="com.emc.spring.autowiring.AutowireBean" autowire="byName"/>
 
-
-	<!-- This will throw a NoUniqueBeanDefinitionException because 2 beans match - i.e. inheritance counts! -->
-	<!--<bean id="autowireBeanByType" class="com.emc.spring.autowiring.AutowireBean" autowire="byType"/>-->
-
-
+	<!-- IN CASE AutowireAnotherHelperBean inherits from AutowireHelperBean - This will throw a NoUniqueBeanDefinitionException because 2 beans match - i.e. inheritance counts! -->
+	<bean id="autowireBeanByType" class="com.emc.spring.autowiring.AutowireBean" autowire="byType"/>
 
 	<bean id="autowireBeanConstructor" class="com.emc.spring.autowiring.AutowireConstructorBean" autowire="constructor"/>
+
+
+<!--
+
+
+ -->
+
+
+	<bean id="autowireParentHelper" class="com.emc.spring.autowiring.AutowireParentHelper">
+		<qualifier value="bean1"/>
+        <property name="property" value="Parent property"/>
+    </bean>
+	<bean id="autowireChildHelper" class="com.emc.spring.autowiring.AutowireChildHelper">
+		<qualifier value="bean2"/>
+        <property name="property" value="Child property"/>
+    </bean>
+	<bean id="autowireBeanByDefault" class="com.emc.spring.autowiring.AutowireBean2" autowire="default"/>
+
+    <!-- Required to process Autowired annotations -->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 </beans>

@@ -3,5 +3,5 @@
  */
 package com.emc.spring.autowiring;
 
-public class AutowireSubHelperBean extends AutowireHelperBean {
+public class AutowireAnotherHelperBean {
 }

@@ -6,7 +6,7 @@ package com.emc.spring.autowiring;
 public class AutowireBean {
 
     private AutowireHelperBean autowireHelperBean;
-    private AutowireSubHelperBean autowireSubHelperBean;
+    private AutowireAnotherHelperBean autowireAnotherHelperBean;
 
     public AutowireHelperBean getAutowireHelperBean() {
         return autowireHelperBean;
@@ -16,11 +16,11 @@ public class AutowireBean {
         this.autowireHelperBean = autowireHelperBean;
     }
 
-    public AutowireSubHelperBean getAutowireSubHelperBean() {
-        return autowireSubHelperBean;
+    public AutowireAnotherHelperBean getAutowireAnotherHelperBean() {
+        return autowireAnotherHelperBean;
     }
 
-    public void setAutowireSubHelperBean(AutowireSubHelperBean autowireSubHelperBean) {
-        this.autowireSubHelperBean = autowireSubHelperBean;
+    public void setAutowireAnotherHelperBean(AutowireAnotherHelperBean autowireAnotherHelperBean) {
+        this.autowireAnotherHelperBean = autowireAnotherHelperBean;
     }
 }
